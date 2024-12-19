@@ -10,33 +10,84 @@
             line-height: 1.6;
         }
 
-        nav {
-            background-color: #333;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-        }
 
-        nav .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
+        /* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        nav ul li {
-            margin: 0 15px;
-        }
+.navbar .logo img {
+    width: 150px;
+    height: auto;
+}
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    text-transform: uppercase;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f9a825;
+}
+
+/* Hamburger Menu (Hidden by Default) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+
 
         section {
             padding: 20px;
@@ -68,9 +119,12 @@
             padding: 10px 0;
             margin-top: 20px;
         }
-
+        
         .contact {
             margin-top: 20px;
+        }
+        .contact p span{
+            /* font-weight: bold; */
         }
 
         @media (max-width: 768px) {
